@@ -1,0 +1,922 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Amora Perfume Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Manrope:wght@400;500;600;700&display=swap">
+</head><body>
+<style>
+/* Layout: same brand-book-to-working-plan structure as the body polish plan, in the perfume colours. Sticky section bar, wide hero in caramel, then calm sections; the money and launch sections are live tools. */
+:root {
+  --bg: #F8F5F9;
+  --surface: #FFFFFF;
+  --ink: #2B1B2E;
+  --muted: #6F5F75;
+  --line: #E6DCEA;
+  --caramel: #8A2E4F;
+  --caramel-deep: #6E1F3D;
+  --blush: #ECE4F6;
+  --blush-ink: #6E5BA6;
+  --gold: #B57A32;
+  --good: #3F7A50;
+  --good-soft: #E1EFE3;
+  --warn: #A0522D;
+  --warn-soft: #F8E6D8;
+  --display: "Gloock", "Didot", Georgia, serif;
+  --body: "Manrope", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #171219; --surface: #211A24; --ink: #F1E9F3; --muted: #B3A5B8; --line: #3A2F3E;
+    --caramel: #E07A9C; --caramel-deep: #F09AB6; --blush: #2F2640; --blush-ink: #C7BCE6; --gold: #E0AE6A;
+    --good: #84C894; --good-soft: #1F3324; --warn: #EBA27A; --warn-soft: #3A2419; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171219; --surface: #211A24; --ink: #F1E9F3; --muted: #B3A5B8; --line: #3A2F3E;
+    --caramel: #E07A9C; --caramel-deep: #F09AB6; --blush: #2F2640; --blush-ink: #C7BCE6; --gold: #E0AE6A;
+    --good: #84C894; --good-soft: #1F3324; --warn: #EBA27A; --warn-soft: #3A2419; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6; }
+.wrap { max-width: 920px; margin: 0 auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: -0.005em; }
+h2 { font-size: clamp(1.8rem, 4.5vw, 2.5rem); line-height: 1.1; }
+h3 { font-size: 1.3rem; line-height: 1.2; }
+p { margin: 0; max-width: 64ch; }
+.eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--caramel); }
+.lede { color: var(--muted); font-size: 1.05rem; }
+a { color: var(--caramel-deep); }
+button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid var(--caramel); outline-offset: 2px; }
+
+/* hero */
+.hero { background: linear-gradient(180deg, var(--blush), var(--bg)); padding-block: 56px 40px; }
+.hero .wrap { display: grid; gap: 18px; }
+.hero h1 { font-size: clamp(3rem, 11vw, 6.2rem); line-height: .95; }
+.hero .tag { font-family: var(--display); font-size: clamp(1.4rem, 4vw, 2rem); color: var(--caramel-deep); }
+.swatches { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+.sw { display: grid; gap: 4px; font-size: .72rem; color: var(--muted); }
+.sw i { width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--line); display: block; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: .9rem; color: var(--muted); }
+.facts b { color: var(--ink); }
+
+/* section nav */
+nav.sec { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+nav.sec .wrap { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+nav.sec a { font-size: .84rem; font-weight: 600; color: var(--muted); text-decoration: none; padding: 12px 10px; white-space: nowrap; border-bottom: 2px solid transparent; }
+nav.sec a.on { color: var(--ink); border-bottom-color: var(--caramel); }
+
+section.block { padding-block: 56px; border-bottom: 1px solid var(--line); }
+section.block > .wrap { display: grid; gap: 22px; }
+.head { display: grid; gap: 8px; }
+
+.quote { font-family: var(--display); font-size: clamp(1.4rem, 3.6vw, 1.9rem); line-height: 1.25; border-left: 3px solid var(--gold); padding-left: 18px; max-width: 30ch; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 720px) { .grid3 { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.panel p { font-size: .95rem; }
+ul.clean { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; font-size: .95rem; }
+.note { font-size: .85rem; color: var(--muted); }
+.flag { background: var(--warn-soft); color: var(--ink); border-radius: 10px; padding: 12px 14px; font-size: .9rem; }
+.flag b { color: var(--warn); }
+
+/* product menu */
+.menu { display: grid; gap: 0; }
+.dish { display: grid; grid-template-columns: 52px 1fr auto; gap: 4px 16px; align-items: start; padding: 18px 0; border-bottom: 1px dashed var(--line); }
+.dish:last-child { border-bottom: 0; }
+.dot { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--line); }
+.dish h3 { font-size: 1.35rem; }
+.dish .when { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-align: right; white-space: nowrap; }
+.dish .when.hero-tag { color: var(--caramel); }
+.dish p { grid-column: 2 / -1; font-size: .95rem; color: var(--muted); }
+@media (max-width: 520px) { .dish { grid-template-columns: 40px 1fr; } .dot { width: 40px; height: 40px; } .dish .when { grid-column: 2; text-align: left; } }
+
+/* can drawing */
+.can-wrap { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: center; }
+@media (max-width: 620px) { .can-wrap { grid-template-columns: 1fr; justify-items: start; } }
+.can { width: 170px; max-width: 100%; }
+.ritual { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-family: var(--display); font-size: 1.25rem; }
+.ritual span.arrow { color: var(--gold); font-family: var(--body); }
+.msgs { display: flex; flex-wrap: wrap; gap: 8px; }
+.msgs span { font-family: var(--display); font-size: 1rem; padding: 8px 14px; border: 1px solid var(--gold); border-radius: 4px; background: var(--surface); }
+
+/* money */
+.calc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 20px; }
+@media (max-width: 760px) { .calc { grid-template-columns: 1fr; } }
+.costrow { display: grid; grid-template-columns: 1fr 92px; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
+.costrow:last-child { border-bottom: 0; }
+.costrow small { display: block; color: var(--muted); font-size: .75rem; }
+.costrow small.est { color: var(--warn); font-weight: 600; }
+.money-in { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); padding-left: 8px; }
+.money-in span { color: var(--muted); font-size: .85rem; }
+.money-in input { width: 100%; border: 0; background: transparent; font: 600 .95rem var(--body); color: var(--ink); padding: 7px 6px; font-variant-numeric: tabular-nums; min-width: 0; }
+.total { display: flex; justify-content: space-between; align-items: baseline; padding-top: 10px; font-weight: 700; }
+.total b { font-family: var(--display); font-weight: 400; font-size: 1.8rem; color: var(--caramel-deep); font-variant-numeric: tabular-nums; }
+.toggle { display: flex; gap: 8px; align-items: center; font-size: .9rem; cursor: pointer; }
+.toggle input { accent-color: var(--caramel); width: 18px; height: 18px; }
+.price-box { display: grid; gap: 8px; }
+.price-box .big { display: flex; align-items: baseline; gap: 10px; }
+.price-box .big b { font-family: var(--display); font-weight: 400; font-size: 3rem; line-height: 1; font-variant-numeric: tabular-nums; }
+input[type="range"] { width: 100%; accent-color: var(--caramel); }
+.tbl-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; min-width: 460px; }
+th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.keep { font-weight: 700; }
+.chip { display: inline-block; font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.chip.good { background: var(--good-soft); color: var(--good); }
+.chip.ok { background: var(--blush); color: var(--blush-ink); }
+.chip.bad { background: var(--warn-soft); color: var(--warn); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 620px) { .stats { grid-template-columns: 1fr; } }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 4px; }
+.stat b { font-family: var(--display); font-weight: 400; font-size: 1.9rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat span { font-size: .85rem; color: var(--muted); }
+.stat .money-in { max-width: 140px; }
+
+/* plan */
+.phases { display: grid; gap: 14px; }
+.phase { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; display: grid; gap: 10px; }
+.phase-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.phase-top .when { font-size: .8rem; font-weight: 700; color: var(--caramel); letter-spacing: .04em; }
+.bar { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--caramel); width: 0; transition: width .3s; }
+.task { display: flex; gap: 10px; align-items: flex-start; font-size: .95rem; cursor: pointer; padding: 3px 0; }
+.task input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--caramel); flex: none; }
+.task.done span { color: var(--muted); text-decoration: line-through; }
+.overall { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.overall .bar { flex: 1; min-width: 160px; height: 10px; border-radius: 5px; }
+
+.shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.shot { display: flex; gap: 10px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; cursor: pointer; font-size: .9rem; }
+.shot input { accent-color: var(--caramel); width: 16px; height: 16px; margin-top: 3px; flex: none; }
+.shot.done { opacity: .6; }
+
+.logform { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.logform label { display: grid; gap: 4px; font-size: .8rem; color: var(--muted); font-weight: 600; min-width: 0; }
+.logform label.wide { grid-column: 1 / -1; }
+.logform input { font: 500 .95rem var(--body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; width: 100%; min-width: 0; }
+@media (max-width: 620px) { .logform { grid-template-columns: 1fr 1fr; } }
+.btn { justify-self: start; font: 700 .9rem var(--body); background: var(--caramel-deep); color: var(--bg); border: 0; border-radius: 6px; padding: 10px 18px; cursor: pointer; }
+.logrow { display: grid; grid-template-columns: 110px repeat(3, minmax(0, 70px)) 1fr auto; gap: 10px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.logrow:last-child { border-bottom: 0; }
+.logrow .x { background: none; border: 0; color: var(--muted); cursor: pointer; font: 600 .8rem var(--body); }
+@media (max-width: 620px) { .logrow { grid-template-columns: 1fr 1fr 1fr; } .logrow .n { grid-column: 1 / -1; } }
+tr.even-row td { background: var(--good-soft); }
+.phase.now { border: 2px solid var(--caramel); }
+.phase.now h3::after { content: "  · This week"; font-family: var(--body); font-size: .8rem; font-weight: 700; color: var(--caramel); }
+footer { padding-block: 40px 64px; color: var(--muted); font-size: .85rem; }
+footer .wrap { display: grid; gap: 6px; }
+.sync { font-size: .78rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bar i { transition: none; } }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Amora by Dani · Perfume business plan · Johannesburg</span>
+    <h1>AMORA</h1>
+    <p class="tag">Perfume with a personality.</p>
+    <p class="lede">Find your scent. Find your vibe. Handmade 15ml sprays made for who you actually are. Every Amora scent comes with its own playlist, so you don't just smell the part, you feel it.</p>
+    <div class="swatches" aria-label="Scent colours">
+      <div class="sw"><i style="background:#C98A3A"></i>Workoholic</div>
+      <div class="sw"><i style="background:#9C8AC4"></i>Overthinker</div>
+      <div class="sw"><i style="background:#7A2440"></i>Charmer</div>
+    </div>
+    <div class="facts">
+      <span>Range <b>3 scents, 15ml spray</b></span>
+      <span>Your site <b>R120</b></span>
+      <span>Takealot <b id="heroPrice">R149</b> single · <b>R349</b> trio</span>
+      <span>Main shop <b>Takealot</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="sec" aria-label="Sections">
+  <div class="wrap" id="secnav">
+    <a href="#brand">Brand</a>
+    <a href="#products">Scents</a>
+    <a href="#packaging">Packaging</a>
+    <a href="#shop">Shopping list</a>
+    <a href="#prove">What's working</a>
+    <a href="#money">Money</a>
+    <a href="#sell">Takealot</a>
+    <a href="#plan">Launch plan</a>
+    <a href="#weeks">Week by week</a>
+    <a href="#content">Content</a>
+    <a href="#checkin">Weekly check-in</a>
+    <a href="#setup">Business setup</a>
+    <a href="#risks">Risks</a>
+    <a href="#safe">Before you sell</a>
+  </div>
+</nav>
+
+<section class="block" id="brand">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">01 · The brand</span><h2>Scent with a soundtrack</h2></div>
+    <p class="quote">A perfume is a mood.</p>
+    <div class="grid3">
+      <div class="panel"><h3>The personality</h3><p>Each scent is a type of person, not a list of notes. People pick the one that sounds like them.</p></div>
+      <div class="panel"><h3>The playlist</h3><p>Every scent has its own playlist on Apple Music and Spotify, behind a QR code on the card inside each order.</p></div>
+      <div class="panel"><h3>The size</h3><p>15ml sprays: easy to carry, easy to gift, and a low price to try a new scent.</p></div>
+    </div>
+    <div class="grid2">
+      <div class="panel">
+        <span class="eyebrow">Brand lines</span>
+        <ul class="clean">
+          <li>Perfume with a personality.</li>
+          <li>Find your scent. Find your vibe.</li>
+          <li>Made for who you actually are.</li>
+          <li>Spray it on, scan the code, press play.</li>
+          <li>Don't compare. Just glow.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <span class="eyebrow">Why it can work</span>
+        <p>On Takealot, small perfumes are mostly unbranded gift sets or "inspired by" copies. Amora has a story they don't: a personality to pick and a playlist to play. That's easy to remember and easy to post.</p>
+        <p class="note">It also connects to the body polish: one Amora world, from scrub to scent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="products">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">02 · The scents</span><h2>Which one are you?</h2>
+      <p class="lede">Three scents, three personalities. Pick the one that sounds like you.</p></div>
+    <div class="menu">
+      <div class="dish"><i class="dot" style="background:linear-gradient(135deg,#E8B36A,#A8652A)"></i><h3>The Workoholic</h3><span class="when hero-tag">15ml · R120</span><p>For the on-the-go mom and the dedicated student. You deserve to smell amazing, even when life gets chaotic.</p></div>
+      <div class="dish"><i class="dot" style="background:linear-gradient(135deg,#C7BCE6,#6E5BA6)"></i><h3>The Overthinker</h3><span class="when hero-tag">15ml · R120</span><p>For the ones whose brain is always on. When every decision feels like too much, this one is not.</p></div>
+      <div class="dish"><i class="dot" style="background:linear-gradient(135deg,#C2475E,#4A1428)"></i><h3>The Charmer</h3><span class="when hero-tag">15ml · R120</span><p>Effortless confidence. Always smooth, never rushed. For the one who knows exactly what they are doing.</p></div>
+      <div class="dish"><i class="dot" style="background:linear-gradient(135deg,#F7F0FA,#9C8AC4)"></i><h3>Your first original scent</h3><span class="when">2027</span><p>The scent you're learning to make yourself. Launch it with the influencers on your collab list.</p></div>
+    </div>
+    <div class="grid3">
+      <div class="panel"><span class="eyebrow">Takealot hero</span><h3>The "Find your vibe" trio</h3><p>All three 15ml sprays in one box with the playlist cards. One listing, one Takealot delivery fee, and it's the perfect gift.</p></div>
+      <div class="panel"><span class="eyebrow">Later</span><h3>30ml size</h3><p>For people who found their scent and want more. Better profit per order on Takealot.</p></div>
+      <div class="panel"><span class="eyebrow">Later</span><h3>Scent + scrub ritual set</h3><p>A 15ml perfume with a mini Crème Brûlée body polish. Connects the two Amora products.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="packaging">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">03 · Packaging</span><h2>The card is the clever part</h2>
+      <p class="lede">The bottle is simple. The playlist card is what people remember and post.</p></div>
+    <div class="can-wrap">
+      <svg class="can" viewBox="0 0 170 230" role="img" aria-label="Sketch of a 15ml Amora spray bottle next to a playlist card">
+        <rect x="52" y="10" width="36" height="22" rx="4" style="fill:var(--gold)"/>
+        <rect x="62" y="32" width="16" height="12" style="fill:var(--line)"/>
+        <rect x="40" y="44" width="60" height="120" rx="10" style="fill:var(--blush)"/>
+        <rect x="46" y="80" width="48" height="56" rx="3" style="fill:var(--surface)"/>
+        <text x="70" y="102" text-anchor="middle" font-family="Gloock, serif" font-size="10" style="fill:var(--ink)">AMORA</text>
+        <text x="70" y="118" text-anchor="middle" font-family="Manrope, sans-serif" font-size="6" style="fill:var(--muted)">The Overthinker</text>
+        <text x="70" y="128" text-anchor="middle" font-family="Manrope, sans-serif" font-size="6" style="fill:var(--muted)">15ml</text>
+        <rect x="104" y="120" width="58" height="80" rx="4" style="fill:var(--surface);stroke:var(--line)"/>
+        <rect x="116" y="132" width="34" height="34" style="fill:var(--ink)"/>
+        <rect x="121" y="137" width="10" height="10" style="fill:var(--surface)"/>
+        <rect x="135" y="151" width="10" height="10" style="fill:var(--surface)"/>
+        <text x="133" y="182" text-anchor="middle" font-family="Manrope, sans-serif" font-size="6" style="fill:var(--muted)">scan · press play</text>
+      </svg>
+      <div style="display:grid;gap:12px;min-width:0">
+        <p><b>Bottle:</b> 15ml spray, same bottle for every scent. Only the label colour changes, so it stays cheap and still looks like a set.</p>
+        <p><b>Playlist card:</b> tucked inside every order, with the QR code for that scent's playlist.</p>
+        <div class="ritual"><span>Spray it on</span><span class="arrow">→</span><span>scan the code</span><span class="arrow">→</span><span>press play</span></div>
+        <p><b>For Takealot:</b> each bottle in a small box (so it can't leak or break on the way), and the trio in one gift box.</p>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="panel"><span class="eyebrow">Small details to discover</span>
+        <ul class="clean">
+          <li>The playlist card with the QR code</li>
+          <li>A line about the personality on the back of the card</li>
+          <li>On the trio box: "Which one are you?"</li>
+          <li>A "post your vibe" note with an Amora hashtag</li>
+        </ul>
+      </div>
+      <div class="panel"><span class="eyebrow">Same rule as the scrub</span>
+        <p>Same bottle, same box size, same card size. Only the colour and words change per scent. That keeps costs low and makes the three look collectible together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="shop">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">04 · Shopping list</span><h2>What goes into one 15ml bottle</h2>
+      <p class="lede">For an eau de parfum strength spray. If your perfumes are made differently, change the numbers in the Money section to match. Prices from Takealot, 2 October 2026.</p></div>
+    <div class="panel" style="border-color:var(--caramel)">
+      <span class="eyebrow">The basic recipe: how much of each</span>
+      <div class="tbl-scroll"><table style="min-width:560px">
+        <thead><tr><th>Ingredient</th><th>What it does</th><th class="num">One 15ml bottle</th><th class="num">Share</th><th class="num">Cost per bottle</th></tr></thead>
+        <tbody>
+          <tr><td><b>1. Perfume oil (concentrate)</b></td><td>The scent itself. Must be made for skin.</td><td class="num">about 3ml</td><td class="num">~20%</td><td class="num">your price</td></tr>
+          <tr><td><b>2. Cosmetic-grade alcohol</b></td><td>Carries the scent and makes it spray. Never hand sanitiser.</td><td class="num">about 12ml</td><td class="num">~80%</td><td class="num">R2</td></tr>
+          <tr><td><b>3. Spray bottle</b></td><td>15ml, same for all scents.</td><td class="num">1</td><td class="num"></td><td class="num">~R19</td></tr>
+          <tr><td><b>4. Label + playlist card</b></td><td>Printed yourself.</td><td class="num">1 each</td><td class="num"></td><td class="num">~R3.50</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Mix the oil into the alcohol, close the bottle and let it rest in a dark place for 2 to 4 weeks before selling. The smell gets smoother and lasts longer. 15% oil is lighter; 20% to 25% is stronger and lasts longer.</p>
+    </div>
+    <div class="grid2">
+      <div class="panel"><span class="eyebrow">Supplies for about 30 bottles</span><div id="buyIng"></div><div class="total"><span>Supplies</span><b id="buyIngTotal">R0</b></div>
+        <p class="note">Keep buying your perfume oils from your current supplier. You need about 30ml of oil for every 10 bottles.</p></div>
+      <div class="panel"><span class="eyebrow">Tools</span><div id="buyTools"></div><div class="total"><span>Tools</span><b id="buyToolsTotal">R0</b></div>
+        <p class="note">Skip anything you already use.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="prove">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">05 · What's working</span><h2>You already sell. Use that.</h2>
+      <p class="lede">Before Takealot, find out what your current customers love. That tells you which scent to lead with and what to say in the listing.</p></div>
+    <div class="grid3">
+      <div class="panel"><span class="eyebrow">1 · Your numbers</span><p>How many bottles have you sold so far? Which scent sells most? Has anyone bought again?</p></div>
+      <div class="panel"><span class="eyebrow">2 · Real words</span><p>Message 10 past customers. Ask what they love, how long it lasts on them, and if they'd leave a review. Save their exact words for the listing.</p></div>
+      <div class="panel"><span class="eyebrow">3 · Trio pre-orders</span><p>Offer the "Find your vibe" trio as a Christmas gift on Instagram before it goes on Takealot.</p></div>
+    </div>
+    <div class="panel" style="border-color:var(--caramel)">
+      <span class="eyebrow">Your "go" rule</span>
+      <p style="font-family:var(--display);font-size:1.3rem;line-height:1.3">If <span id="goWait">10</span> people pre-order the trio within 2 weeks, make 20 trios and list them on Takealot for Christmas.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <label class="note" for="goNum">Your number</label>
+        <div class="money-in" style="max-width:110px;padding-left:0"><input type="number" id="goNum" min="1" step="1" value="10" inputmode="numeric" style="padding-left:10px"></div>
+        <label class="note" for="goHave">People so far</label>
+        <div class="money-in" style="max-width:110px;padding-left:0"><input type="number" id="goHave" min="0" step="1" value="0" inputmode="numeric" style="padding-left:10px"></div>
+        <span class="chip" id="goChip"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="money">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">06 · Money</span><h2>What one bottle costs, and what you keep</h2>
+      <p class="lede">Every number is editable. Items in orange are guesses: put in what you really pay.</p></div>
+    <div class="calc">
+      <div class="panel">
+        <span class="eyebrow">Cost of one 15ml bottle</span>
+        <div id="costRows"></div>
+        <label class="toggle" for="boxOn"><input type="checkbox" id="boxOn" checked> Include a small box (needed for Takealot)</label>
+        <div class="total"><span>Cost per bottle</span><b id="unitCost">R0</b></div>
+      </div>
+      <div style="display:grid;gap:16px;align-content:start;min-width:0">
+        <div class="panel price-box">
+          <span class="eyebrow">Takealot price, one bottle</span>
+          <div class="big"><b id="priceOut">R149</b><span class="note">for 15ml on Takealot</span></div>
+          <input type="range" id="price" min="99" max="299" step="10" value="149" aria-label="Selling price">
+          <p class="note">On Takealot today: unbranded 4-bottle gift sets R145 to R199, "inspired by" 30ml R285 to R500, local brand Jagersfontein 40ml R199, Elizabeth Arden 15ml R290 to R360. Keep R120 on your own site. Takealot's fixed fees are why it costs a bit more there.</p>
+          <p id="tkVerdict" class="note"></p>
+        </div>
+        <div class="panel price-box">
+          <span class="eyebrow">Takealot trio price (3 × 15ml)</span>
+          <div class="money-in" style="max-width:160px"><span>R</span><input type="number" id="bundle" value="349" min="0" step="10" inputmode="numeric" aria-label="Trio price"></div>
+          <p class="note">One listing, one delivery fee for three bottles. You earn the most per order.</p>
+        </div>
+        <div class="flag" id="oilFlag"><b>Perfume oil and the bottle are most of your cost.</b> Ask your supplier for a bigger-size price, and compare bottle prices from packaging suppliers.</div>
+      </div>
+    </div>
+    <div class="panel">
+      <span class="eyebrow">What you keep per order: Takealot first, other options below</span>
+      <div class="tbl-scroll"><table>
+        <thead><tr><th>Where</th><th>What they take</th><th class="num">They take</th><th class="num">You keep</th></tr></thead>
+        <tbody id="channels"></tbody>
+      </table></div>
+      <p class="note">Takealot: 15% success fee + about R32 delivery fee, both plus VAT, plus R460 a month for the account (shared with the body polish if you sell both). Check the exact fees in the seller portal.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><span>Monthly profit goal</span><div class="money-in"><span>R</span><input type="number" id="goal" value="3000" min="0" step="500" inputmode="numeric" aria-label="Monthly profit goal"></div><b id="goalJars">0</b><span>single bottles a month on Takealot, after the R460 fee</span></div>
+      <div class="stat"><span>Takealot's R460 monthly fee</span><b id="tkBreak">0</b><span>single bottles a month just to cover it</span></div>
+      <div class="stat"><span>Supplies for about 30 bottles</span><b id="testKit">R0</b><span>plus your perfume oils</span></div>
+    </div>
+    <div class="panel">
+      <span class="eyebrow">Your first 12 months on Takealot (single bottles)</span>
+      <p class="note">A planning guess, not a promise. "Takealot fees" includes the R460 monthly account fee.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <label class="note" style="display:grid;gap:4px">Selling price per bottle<div class="money-in" style="max-width:120px"><span>R</span><input type="number" id="fcPrice" min="0" step="10" inputmode="numeric"></div></label>
+        <label class="note" style="display:grid;gap:4px">Bottles sold in month 1<div class="money-in" style="max-width:120px;padding-left:0"><input type="number" id="fcStart" min="0" step="1" inputmode="numeric" style="padding-left:10px"></div></label>
+        <label class="note" style="display:grid;gap:4px">Growth each month<div class="money-in" style="max-width:120px"><input type="number" id="fcGrow" min="0" step="5" inputmode="numeric"><span style="padding-right:8px">%</span></div></label>
+        <label class="note" style="display:grid;gap:4px">Money spent to start<div class="money-in" style="max-width:140px"><span>R</span><input type="number" id="fcSpend" min="0" step="100" inputmode="numeric"></div></label>
+      </div>
+      <div class="stats" id="fcPerCan"></div>
+      <div class="tbl-scroll"><table style="min-width:640px">
+        <thead><tr><th>Month</th><th class="num">Bottles</th><th class="num">Sales</th><th class="num">Cost to make</th><th class="num">Takealot fees</th><th class="num">Profit</th><th class="num">Running total</th></tr></thead>
+        <tbody id="fcRows"></tbody>
+      </table></div>
+      <p class="note" id="fcSummary"></p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="sell">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">07 · Takealot</span><h2>Takealot is the main shop</h2>
+      <p class="lede">Perfume is a popular gift in November and December. Your perfume already exists, so it can be on Takealot before the body polish.</p></div>
+    <div class="grid2">
+      <div class="panel"><span class="eyebrow">What you need to sign up</span>
+        <ul class="clean">
+          <li>Your ID and a bank account. No company needed. One seller account covers the perfume and the polish.</li>
+          <li>A barcode (EAN) for each scent and one for the trio.</li>
+          <li>Product details: name, 15ml, ingredients, scent description.</li>
+        </ul>
+      </div>
+      <div class="panel"><span class="eyebrow">Perfume rules to check</span>
+        <ul class="clean">
+          <li><b>Never use a designer brand name</b> in your title, photos or description, like "inspired by" a famous perfume. Takealot can remove the listing.</li>
+          <li>Alcohol perfume is flammable. Ask Takealot what's needed to send perfume to their warehouse.</li>
+          <li>Bottles must survive the trip. Box each one and test by posting a bottle to a friend.</li>
+        </ul>
+      </div>
+      <div class="panel"><span class="eyebrow">Photos that win the click</span>
+        <ul class="clean">
+          <li>Main photo: bottle on a white background, filling most of the frame, at least 1000 × 1000 pixels.</li>
+          <li>Then: the playlist card, the QR being scanned, the trio box, the bottle in a hand for size.</li>
+          <li>Use the personality in the title, for example "Amora The Overthinker Eau de Parfum 15ml".</li>
+        </ul>
+      </div>
+      <div class="panel"><span class="eyebrow">Getting the first sales</span>
+        <ul class="clean">
+          <li>Ask past customers to buy their next bottle on Takealot and leave an honest review.</li>
+          <li>Put the Takealot link in your bio and every Reel.</li>
+          <li>Card in the box: "Loved it? Tell others in a Takealot review". Never offer anything in return.</li>
+          <li>Watch the Promotions Calendar for the Blue Dot Sale (Black Friday is 27 November 2026).</li>
+          <li>Try a small Sponsored Ads budget once you have 5 good reviews.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="head" style="margin-top:12px"><span class="eyebrow">Other options, welcome alongside Takealot</span></div>
+    <div class="grid3">
+      <div class="panel"><h3>Your website + Instagram</h3><p>Keep selling at R120 here. You keep the most per bottle.</p></div>
+      <div class="panel"><h3>Amazon.co.za</h3><p>Only 5% until 31 March 2027. Check their rules for perfume first.</p></div>
+      <div class="panel"><h3>Markets and pop-ups</h3><p>People can smell before buying, which sells perfume best. Bring testers and the playlist cards.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="plan">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">08 · Launch plan</span><h2>From your website to Takealot</h2>
+      <p class="lede">Tick things off as you go. This runs alongside the body polish plan: the Takealot account, barcodes and trademark only need doing once.</p></div>
+    <div class="overall"><b id="overallPct">0%</b><div class="bar"><i id="overallBar"></i></div><span class="note" id="overallCount"></span></div>
+    <div class="phases" id="phases"></div>
+  </div>
+</section>
+
+<section class="block" id="weeks">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">09 · Week by week</span><h2>On Takealot before Christmas</h2>
+      <p class="lede">Starting Monday 5 October 2026. Do this week's list and nothing else. If a week runs over, push the rest back.</p></div>
+    <div class="overall"><b id="wkPct">0%</b><div class="bar"><i id="wkBar"></i></div><span class="note" id="wkNow"></span></div>
+    <div class="phases" id="weeksList"></div>
+  </div>
+</section>
+
+<section class="block" id="content">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">10 · Content</span><h2>Make people ask "which one am I?"</h2>
+      <p class="lede">The personalities and playlists give you endless content. Tick shots as you film them.</p></div>
+    <div class="shots" id="shots"></div>
+    <div class="grid2">
+      <div class="panel"><span class="eyebrow">The idea</span><p>Every post should make someone think of themselves or a friend: "that's so me" or "I need to send this to her". Tagging friends is how it spreads.</p></div>
+      <div class="panel"><span class="eyebrow">Fits your current plan</span><p>Keep your Reel rotation (lesson, interview, trend). Lessons from learning to make your own scent, customers telling you which one they are, and trending sounds from each playlist.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="checkin">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">11 · Weekly check-in</span><h2>Ten minutes every Sunday</h2>
+      <p class="lede">Write down the same few numbers every week and you'll see which scent and which posts are working.</p></div>
+    <div class="panel">
+      <span class="eyebrow">Add this week</span>
+      <div class="logform">
+        <label>Week of<input type="date" id="lgDate"></label>
+        <label>Bottles sold<input type="number" id="lgCans" min="0" step="1" inputmode="numeric"></label>
+        <label>New reviews<input type="number" id="lgRev" min="0" step="1" inputmode="numeric"></label>
+        <label>Bottles in stock<input type="number" id="lgStock" min="0" step="1" inputmode="numeric"></label>
+        <label class="wide">Best scent this week / what to change<input type="text" id="lgNote" autocomplete="off"></label>
+      </div>
+      <button class="btn" id="lgAdd" type="button">Save this week</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><span>Bottles sold so far</span><b id="lgTotCans">0</b><span id="lgTotWeeks">0 weeks logged</span></div>
+      <div class="stat"><span>Profit so far (Takealot)</span><b id="lgTotProfit">R0</b><span>before the monthly fee</span></div>
+      <div class="stat"><span>Reviews so far</span><b id="lgTotRev">0</b><span>aim for 5 before ads</span></div>
+    </div>
+    <div class="panel"><div id="lgList"></div></div>
+  </div>
+</section>
+
+<section class="block" id="setup">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">12 · Business setup</span><h2>Make it official, step by step</h2>
+      <p class="lede">If you've already done these for the body polish, they count for the perfume too.</p></div>
+    <div class="phases" id="setupList"></div>
+    <div class="grid2">
+      <div class="panel"><span class="eyebrow">Money help: NYDA grant</span><p>If you're 18 to 35 and a South African citizen, the National Youth Development Agency gives grants that don't need to be paid back, plus mentoring. You apply online, do a business training course and give a 10-minute pitch.</p></div>
+      <div class="panel"><span class="eyebrow">Your pitch, in your words</span><p>Amora by Dani makes perfume with a personality. Handmade 15ml sprays made for who you actually are, made with love in Johannesburg. Every scent comes with its own playlist, hidden behind a QR code on the card tucked inside your order. Spray it on, scan the code, press play. It's a small thing that makes Amora feel like yours, not just another bottle on the shelf.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="risks">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">13 · Risks and plan B</span><h2>What could go wrong, and what you'd do</h2></div>
+    <div class="panel"><div class="tbl-scroll"><table>
+      <thead><tr><th>If this happens</th><th>Plan B</th></tr></thead>
+      <tbody>
+        <tr><td>Takealot removes a listing over a brand name</td><td>Only ever use Amora names and your own scent descriptions. Never mention designer perfumes.</td></tr>
+        <tr><td>A bottle leaks or breaks in delivery</td><td>Box every bottle, tighten the sprayer, and test by posting one to a friend before you send stock.</td></tr>
+        <tr><td>Customers say it doesn't last long</td><td>Let it rest longer before selling, or try a stronger oil percentage in a test batch.</td></tr>
+        <tr><td>One scent sells and the others don't</td><td>Lead with the best seller on Takealot and push the trio so people discover the others.</td></tr>
+        <tr><td>Sales are slow in the first month</td><td>Change one thing at a time: main photo, price, then title. Check your weekly numbers to see what moved.</td></tr>
+        <tr><td>Someone has a skin reaction</td><td>Refund kindly, ask what happened, check the oil's safety sheet. Keep batch records so you can trace it.</td></tr>
+        <tr><td>Stock runs out before Christmas</td><td>Mixed perfume needs 2 to 4 weeks to rest, so make December stock by early November.</td></tr>
+        <tr><td>Bad review on Takealot</td><td>Reply politely and fix the cause. A few honest reviews of any kind are better than none.</td></tr>
+      </tbody>
+    </table></div></div>
+  </div>
+</section>
+
+<section class="block" id="safe">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">14 · Before you sell</span><h2>Safe and legal first</h2>
+      <p class="lede">These matter even more on Takealot, where strangers buy your perfume.</p></div>
+    <div class="phases" id="safeList"></div>
+    <p class="note">This is a starting checklist, not legal advice. South Africa's CTFA (Cosmetic, Toiletry &amp; Fragrance Association) has guidance on cosmetic labels and safety.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Amora by Dani · perfume plan started 2 October 2026</span>
+    <span class="sync" id="sync">Progress saved on this device</span>
+  </div>
+</footer>
+
+<script>
+const COSTS = [
+  { id: "oil", name: "Perfume oil, ~3ml", src: "Guess. Put in what your supplier charges per ml × 3", v: 12, est: true },
+  { id: "alc", name: "Cosmetic-grade alcohol, ~12ml", src: "Naturex cosmetic ethanol 96% 1L, R165", v: 2 },
+  { id: "bottle", name: "15ml spray bottle", src: "30 × 15ml spray bottles, R577. Or your current supplier", v: 19 },
+  { id: "label", name: "Label", src: "Printed yourself", v: 2, est: true },
+  { id: "card", name: "Playlist card with QR code", src: "Printed yourself", v: 1.5, est: true }
+];
+const BOX = { id: "box", name: "Small box per bottle", src: "Guess. Get a quote for small perfume boxes", v: 5, est: true };
+const TEST_KIT = [
+  ["Cosmetic-grade alcohol 1L", "Naturex ethanol 96% cosmetic grade (makes about 80 bottles)", 165],
+  ["15ml spray bottles × 30", "30 × 15ml spray bottles", 577],
+  ["Sticker paper for labels", "Print at home", 0],
+  ["Card paper for playlist cards", "Print at home", 0]
+];
+const TOOLS = [
+  ["Plastic measuring beakers", "Set of 9", 119],
+  ["Droppers / pipettes", "For measuring oil exactly. Or use what you have", 0],
+  ["Digital scale, 0.1g", "Only if you don't have one", 139],
+  ["Small funnel", "From home, washed and dried", 0]
+];
+const SETUP = [
+  { id: "su1", name: "Start", when: "Now", tasks: [
+    "Sole proprietor is fine: no company registration needed, and Takealot accepts individuals",
+    "Open a separate bank account for Amora (one for perfume and polish)",
+    "Track every rand in and out in one simple sheet",
+    "Keep receipts for everything you buy for the business" ] },
+  { id: "su2", name: "Protect the brand", when: "Before you grow", tasks: [
+    "Search the CIPC trademark database to check nobody already owns \"Amora\" for cosmetics",
+    "File a trademark for Amora in class 3 (covers perfume and body care): R590 if you do it yourself",
+    "Get a quote for product liability insurance" ] },
+  { id: "su3", name: "Tax", when: "As you earn", tasks: [
+    "Register for income tax with SARS once Amora makes a profit",
+    "Ask about Turnover Tax: a simpler small-business tax for turnover up to R2.3 million a year",
+    "VAT: only compulsory above R2.3 million a year in sales, so not needed to start" ] },
+  { id: "su4", name: "Get support", when: "Optional", tasks: [
+    "Check if you qualify for an NYDA grant (age 18 to 35)",
+    "Find one mentor who sells perfume or sells on Takealot",
+    "Join a South African small-business or Takealot sellers group" ] }
+];
+const WEEKS = [
+  ["2026-10-05", "Takealot and your numbers", ["Apply for a Takealot seller account (one account for perfume and polish)", "Put your real cost per bottle into the Money section", "Count bottles sold so far and your best-selling scent", "Message 10 past customers for feedback and their exact words"]],
+  ["2026-10-12", "Safety and bottles", ["Get the safety sheet for each perfume oil from your supplier", "Check you use cosmetic-grade alcohol, not sanitiser", "Post a boxed bottle to a friend to test it doesn't leak", "Get quotes for small perfume boxes and a trio gift box"]],
+  ["2026-10-19", "Make Christmas stock", ["Make 20 of each scent now, so they rest 2 to 4 weeks before December", "Write the batch number and date on each", "Buy barcodes: 3 scents + the trio", "Open trio pre-orders on Instagram as a Christmas gift"]],
+  ["2026-10-26", "Photos", ["White-background main photo of each bottle and the trio", "Photos of the playlist card, QR being scanned, bottle in a hand", "Design the trio box and the review card"]],
+  ["2026-11-02", "Listings", ["Write the 3 listings + trio: personality, notes, 15ml, ingredients", "No designer brand names anywhere", "Print labels with ingredients, flammable warning and batch number", "Check your 'go' number for the trio"]],
+  ["2026-11-09", "Go live", ["Create the Takealot listings (start on Leadtime)", "Smell-check the resting batches", "Ask Takealot what's needed to send perfume to their warehouse", "Sunday check-in starts"]],
+  ["2026-11-16", "First reviews", ["Ask past customers to buy on Takealot and leave honest reviews", "Put the Takealot link in your bio and every Reel", "Check the Promotions Calendar for the Blue Dot Sale", "Sunday check-in"]],
+  ["2026-11-23", "Black Friday week", ["Black Friday is 27 November: post the trio as the gift of the week", "'Which one are you?' Reel", "Sunday check-in"]],
+  ["2026-11-30", "Gift push", ["'Gift for her' posts: one for each personality", "Send the trio to 3 to 5 influencers from your collab list", "Make more if any scent is under 5 bottles", "Sunday check-in"]],
+  ["2026-12-07", "Christmas", ["Post 'last day for Christmas delivery' reminders", "Repost every customer post", "Sunday check-in"]],
+  ["2026-12-14", "Look back", ["Reply to every review", "Look at your check-ins: which scent and which posts sold", "Plan your first original scent launch for 2027", "Take a break"]]
+].map(([start, name, tasks], i) => {
+  const s0 = new Date(start + "T00:00:00"), e0 = new Date(s0); e0.setDate(e0.getDate() + 6);
+  const f = d => d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  return { id: "wk" + (i + 1), name: `Week ${i + 1} · ${name}`, when: `${f(s0)} to ${f(e0)}`, start: s0, end: e0, tasks };
+});
+const PHASES = [
+  { id: "p0", name: "Know what's working", when: "October 2026", tasks: [
+    "Count sales so far and find your best-selling scent",
+    "Get feedback and exact words from 10 past customers",
+    "Set your trio 'go' number and track it" ] },
+  { id: "tk", name: "Set up Takealot", when: "October 2026", tasks: [
+    "Apply on the Takealot Seller Portal",
+    "Buy barcodes for each scent and the trio",
+    "Take white-background photos of each bottle and the trio",
+    "Write the listings using the personalities, with no designer names",
+    "Check what Takealot needs for sending perfume" ] },
+  { id: "p3", name: "Launch on Takealot", when: "Mid November", tasks: [
+    "Finish the 'Before you sell' checklist below",
+    "Put the 3 scents and the trio live",
+    "Get the first 5 honest reviews",
+    "Link to Takealot from every post" ] },
+  { id: "p4", name: "Gift season", when: "Late November to December", tasks: [
+    "Blue Dot Sale / Black Friday trio deal",
+    "Send trios to influencers from your collab list",
+    "Christmas delivery reminders" ] },
+  { id: "p5", name: "Grow", when: "2027", tasks: [
+    "Try Sponsored Ads once you have 5+ good reviews",
+    "Add a 30ml size of your best seller",
+    "Launch your first original scent with influencers",
+    "Make a perfume + body polish ritual set" ] }
+];
+const SAFE = [
+  { id: "s1", name: "Product safety", when: "", tasks: [
+    "Every perfume oil is made for skin, with the supplier's safety sheet (IFRA) on file",
+    "Oil percentage within the supplier's limit for fine fragrance",
+    "Cosmetic-grade alcohol only, never hand sanitiser or surgical spirit",
+    "Each batch rested and smell-checked before selling",
+    "Patch test on your own skin before a new batch goes out" ] },
+  { id: "s2", name: "Labels and records", when: "", tasks: [
+    "Ingredient list on the box or label (alcohol, parfum and any allergens the supplier lists)",
+    "15ml, your business name and a way to contact you",
+    "\"Flammable. Keep away from flames\" and \"For external use only\"",
+    "Batch number and date made, with a record of each batch" ] },
+  { id: "s3", name: "Packing", when: "", tasks: [
+    "Sprayer screwed tight and leak-tested",
+    "Every bottle boxed so it can't break",
+    "Check Takealot's rules for sending flammable products" ] }
+];
+const SHOTS = ["Slow-motion spray in the light", "Scanning the QR, the song starts", "\"Which one are you?\" with the 3 bottles", "A chaotic morning with The Workoholic", "A 2am overthinking moment with The Overthinker", "Getting ready with The Charmer", "Packing an order with the playlist card", "The trio box being opened", "A customer smelling all three and choosing", "Tag a friend who's an Overthinker", "Learning to make your first original scent", "Your bag: where the 15ml lives", "Christmas gift wrapping the trio", "Unboxing from Takealot"];
+let state = { costs: {}, box: true, price: 149, bundle: 349, goal: 3000, done: {}, go: { num: 10, have: 0 }, fc: { start: 10, grow: 15, spend: 1500 }, log: [] };
+let store = null;
+
+const R = n => "R" + (Math.round(n * 100) / 100).toLocaleString("en-ZA", { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
+const R0 = n => (Math.round(n) < 0 ? "-R" : "R") + Math.abs(Math.round(n)).toLocaleString("en-ZA");
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else if (v !== false && v != null) n.setAttribute(k, v === true ? "" : v);
+  }
+  for (const c of kids.flat()) if (c != null) n.append(c.nodeType ? c : document.createTextNode(c));
+  return n;
+}
+function loadLocal() { try { const s = JSON.parse(localStorage.getItem("amora-perfume-plan") || "null"); if (s) state = { ...state, ...s }; } catch (e) {} }
+let t;
+function save() {
+  try { localStorage.setItem("amora-perfume-plan", JSON.stringify(state)); } catch (e) {}
+  clearTimeout(t);
+  t = setTimeout(async () => {
+    if (!store) return;
+    try { await store.set({ ...state, updated: Date.now() }); setSync("Progress saved to your account"); } catch (e) { setSync("Progress saved on this device only"); }
+  }, 600);
+}
+function setSync(s) { document.getElementById("sync").textContent = s; }
+
+const val = c => state.costs[c.id] ?? c.v;
+function unitCost() { return COSTS.reduce((a, c) => a + Number(val(c) || 0), 0) + (state.box ? Number(val(BOX) || 0) : 0); }
+
+function renderCosts() {
+  const box = document.getElementById("costRows");
+  box.replaceChildren();
+  [...COSTS, BOX].forEach(c => {
+    if (c === BOX && !state.box) return;
+    const inp = el("input", { type: "number", id: "c_" + c.id, min: "0", step: "0.5", inputmode: "decimal", "aria-label": c.name });
+    inp.value = val(c);
+    inp.addEventListener("input", () => { state.costs[c.id] = inp.value === "" ? 0 : Number(inp.value); save(); renderMoney(); });
+    box.append(el("div", { class: "costrow" },
+      el("div", {}, c.name, el("small", { class: c.est ? "est" : "" }, c.src)),
+      el("div", { class: "money-in" }, el("span", {}, "R"), inp)));
+  });
+}
+
+function renderMoney() {
+  const cost = unitCost(), p = state.price;
+  document.getElementById("unitCost").textContent = R(cost);
+  document.getElementById("priceOut").textContent = R0(p);
+  document.getElementById("heroPrice").textContent = R0(p);
+  const oils = Number(val(COSTS[0])) + Number(val(COSTS[2]));
+  document.getElementById("oilFlag").hidden = oils < cost * 0.4;
+
+  const tkFeeFor = price => (price * 0.15 + 32) * 1.15;
+  const tkFee = tkFeeFor(p);
+  const bp = state.bundle;
+  const rows = [
+    { w: "Takealot · 1 bottle", how: "15% + ~R32 delivery, plus VAT (and R460 a month)", fee: tkFee, main: true },
+    { w: "Takealot · trio", how: `3 bottles for ${R0(bp)}, delivery fee charged once`, fee: tkFeeFor(bp), price: bp, units: 3, main: true },
+    { w: "Your website / Instagram", how: "Nothing. Sold at R120, customer pays delivery", fee: 0, price: 120 },
+    { w: "Markets", how: "Stall fee only. Sold at R120", fee: 0, price: 120 },
+    { w: "Amazon.co.za", how: "5% until 31 March 2027", fee: p * 0.05 },
+    { w: "Shops and boutiques", how: "They buy at about half price", fee: p / 2 }
+  ];
+  const tb = document.getElementById("channels");
+  tb.replaceChildren();
+  rows.forEach(r => {
+    const price = r.price ?? p, units = r.units ?? 1;
+    const keep = price - r.fee - cost * units;
+    const pct = keep / price;
+    const cls = keep <= 0 ? "bad" : pct >= 0.4 ? "good" : pct >= 0.2 ? "ok" : "bad";
+    tb.append(el("tr", {}, el("td", {}, r.main ? el("b", {}, r.w) : r.w), el("td", {}, r.how), el("td", { class: "num" }, R0(r.fee)),
+      el("td", { class: "num keep" }, el("span", { class: "chip " + cls }, R0(keep)), units > 1 ? el("small", { class: "note", style: "display:block" }, R0(keep / units) + " per bottle") : null)));
+  });
+  const tkKeep = p - tkFee - cost;
+  document.getElementById("goalJars").textContent = tkKeep > 0 ? Math.ceil((state.goal + 460) / tkKeep) + " bottles" : "Raise the price";
+  document.getElementById("tkVerdict").textContent = tkKeep <= 0
+    ? `At ${R0(p)} you lose money on Takealot. Raise the price or lower your costs.`
+    : `At ${R0(p)} you keep ${R0(tkKeep)} per bottle on Takealot (${Math.round(tkKeep / p * 100)}% of the price).`;
+  document.getElementById("tkBreak").textContent = tkKeep > 0 ? Math.ceil(460 / tkKeep) + " bottles" : "You'd lose money";
+  renderForecast(); if (document.getElementById("lgList").childElementCount) renderLog();
+  document.getElementById("testKit").textContent = R0(TOOLS.reduce((a, x) => a + x[2], 0));
+}
+
+function renderShop() {
+  [["buyIng", TEST_KIT, "ing"], ["buyTools", TOOLS, "tool"]].forEach(([boxId, list, key]) => {
+    const box = document.getElementById(boxId);
+    box.replaceChildren();
+    list.forEach(([name, what, price], i) => {
+      const id = "buy_" + key + i;
+      const cb = el("input", { type: "checkbox", id: "t_" + id });
+      cb.checked = !!state.done[id];
+      cb.addEventListener("change", () => { state.done[id] = cb.checked; if (!cb.checked) delete state.done[id]; save(); renderShop(); });
+      box.append(el("label", { class: "task costrow" + (cb.checked ? " done" : ""), for: "t_" + id, style: "grid-template-columns:auto 1fr auto" },
+        cb, el("span", {}, name, el("small", {}, what)), el("b", { style: "font-variant-numeric:tabular-nums" }, price ? R0(price) : "R0")));
+    });
+    document.getElementById(boxId + (key === "ing" ? "" : "") + "Total").textContent = R0(list.reduce((a, x) => a + x[2], 0));
+  });
+}
+
+function checklist(container, groups) {
+  const box = document.getElementById(container);
+  box.replaceChildren();
+  groups.forEach(g => {
+    const doneN = g.tasks.filter((_, i) => state.done[g.id + i]).length;
+    const bar = el("div", { class: "bar" }, el("i", { style: `width:${doneN / g.tasks.length * 100}%` }));
+    box.append(el("div", { class: "phase" },
+      el("div", { class: "phase-top" }, el("h3", {}, g.name), el("span", { class: "when" }, (g.when ? g.when + " · " : "") + `${doneN}/${g.tasks.length}`)),
+      bar,
+      el("div", {}, g.tasks.map((tsk, i) => {
+        const id = g.id + i;
+        const cb = el("input", { type: "checkbox", id: "t_" + id });
+        cb.checked = !!state.done[id];
+        cb.addEventListener("change", () => { state.done[id] = cb.checked; if (!cb.checked) delete state.done[id]; save(); container === "weeksList" ? renderWeeks() : renderPlans(); });
+        return el("label", { class: "task" + (cb.checked ? " done" : ""), for: "t_" + id }, cb, el("span", {}, tsk));
+      }))));
+  });
+}
+function renderShots() {
+  const box = document.getElementById("shots");
+  box.replaceChildren();
+  SHOTS.forEach((s, i) => {
+    const id = "shot" + i;
+    const cb = el("input", { type: "checkbox", id: "t_" + id });
+    cb.checked = !!state.done[id];
+    cb.addEventListener("change", () => { state.done[id] = cb.checked; if (!cb.checked) delete state.done[id]; save(); renderShots(); });
+    box.append(el("label", { class: "shot" + (cb.checked ? " done" : ""), for: "t_" + id }, cb, el("span", {}, s)));
+  });
+}
+function renderPlans() {
+  checklist("phases", PHASES);
+  checklist("safeList", SAFE);
+  checklist("setupList", SETUP);
+  const all = [...PHASES, ...SAFE, ...SETUP].flatMap(g => g.tasks.map((_, i) => g.id + i));
+  const d = all.filter(id => state.done[id]).length;
+  const pct = Math.round(d / all.length * 100);
+  document.getElementById("overallPct").textContent = pct + "%";
+  document.getElementById("overallBar").style.width = pct + "%";
+  document.getElementById("overallCount").textContent = `${d} of ${all.length} steps done, including setup and "Before you sell"`;
+}
+function tkKeepNow() { const p = state.price; return p - (p * 0.15 + 32) * 1.15 - unitCost(); }
+const MONTHS = ["Dec 2026","Jan 2027","Feb 2027","Mar 2027","Apr 2027","May 2027","Jun 2027","Jul 2027","Aug 2027","Sep 2027","Oct 2027","Nov 2027"];
+function renderForecast() {
+  const keep = tkKeepNow(), p = state.price, f = state.fc;
+  const cost = unitCost(), fee = (p * 0.15 + 32) * 1.15;
+  document.getElementById("fcPrice").value = p;
+  const pc = document.getElementById("fcPerCan"); pc.replaceChildren();
+  [["You sell each bottle for", R0(p), "the customer pays this on Takealot"],
+   ["Costs per bottle", R(cost + fee), `${R(cost)} to make + ${R0(fee)} Takealot fees`],
+   ["You keep per bottle", R0(keep), "before the R460 monthly account fee"]].forEach(([a, b, c]) =>
+    pc.append(el("div", { class: "stat" }, el("span", {}, a), el("b", {}, b), el("span", {}, c))));
+  let run = -f.spend, even = -1, cans = f.start;
+  const tb = document.getElementById("fcRows"); tb.replaceChildren();
+  MONTHS.forEach((m, i) => {
+    if (i) cans = cans * (1 + f.grow / 100);
+    const c = Math.round(cans), profit = c * keep - 460;
+    run += profit;
+    if (even < 0 && run >= 0) even = i;
+    tb.append(el("tr", { class: even === i ? "even-row" : "" }, el("td", {}, m), el("td", { class: "num" }, c), el("td", { class: "num" }, R0(c * p)),
+      el("td", { class: "num" }, R0(c * cost)), el("td", { class: "num" }, R0(c * fee + 460)),
+      el("td", { class: "num" }, R0(profit)), el("td", { class: "num" }, R0(run))));
+  });
+  document.getElementById("fcSummary").textContent = keep <= 0 ? "At this price you lose money on every bottle. Raise the price in the Money section."
+    : even >= 0 ? `You'd earn back your start-up money in ${MONTHS[even]} (green row). After 12 months you'd be ${R0(run)} ahead.`
+    : `With these numbers you wouldn't earn back your start-up money within 12 months. Try more sales or a lower cost.`;
+}
+function renderGo() {
+  const g = state.go;
+  document.getElementById("goWait").textContent = g.num;
+  const chip = document.getElementById("goChip");
+  const hit = g.have >= g.num;
+  chip.className = "chip " + (hit ? "good" : g.have >= g.num / 2 ? "ok" : "bad");
+  chip.textContent = hit ? "Go! Make the first batch" : `${Math.max(g.num - g.have, 0)} more to go`;
+}
+function renderLog() {
+  const keep = tkKeepNow();
+  const list = document.getElementById("lgList"); list.replaceChildren();
+  const rows = [...state.log].sort((a, b) => (b.d || "").localeCompare(a.d || ""));
+  if (!rows.length) list.append(el("p", { class: "note" }, "No weeks logged yet. Your first check-in will show here."));
+  else list.append(el("div", { class: "logrow note" }, el("b", {}, "Week"), el("b", {}, "Sold"), el("b", {}, "Reviews"), el("b", {}, "Stock"), el("b", { class: "n" }, "Note"), el("span", {})));
+  rows.forEach(r => list.append(el("div", { class: "logrow" },
+    el("span", {}, r.d ? new Date(r.d + "T12:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : "-"),
+    el("span", {}, r.c ?? 0), el("span", {}, r.r ?? 0), el("span", {}, r.s ?? "-"), el("span", { class: "n" }, r.n || ""),
+    el("button", { class: "x", type: "button", onclick: () => { state.log = state.log.filter(x => x !== r); save(); renderLog(); } }, "Remove"))));
+  const cans = state.log.reduce((a, r) => a + (Number(r.c) || 0), 0);
+  document.getElementById("lgTotCans").textContent = cans;
+  document.getElementById("lgTotWeeks").textContent = state.log.length + (state.log.length === 1 ? " week logged" : " weeks logged");
+  document.getElementById("lgTotProfit").textContent = R0(cans * Math.max(keep, 0));
+  document.getElementById("lgTotRev").textContent = state.log.reduce((a, r) => a + (Number(r.r) || 0), 0);
+}
+function renderWeeks() {
+  checklist("weeksList", WEEKS);
+  const now = new Date(), cards = document.getElementById("weeksList").children;
+  let cur = WEEKS.findIndex(w => now >= w.start && now < new Date(w.end.getTime() + 864e5));
+  if (cur >= 0) cards[cur].classList.add("now");
+  const all = WEEKS.flatMap(g => g.tasks.map((_, i) => g.id + i)), d = all.filter(id => state.done[id]).length;
+  const pct = Math.round(d / all.length * 100);
+  document.getElementById("wkPct").textContent = pct + "%";
+  document.getElementById("wkBar").style.width = pct + "%";
+  document.getElementById("wkNow").textContent = cur >= 0 ? `You're in week ${cur + 1}` : now < WEEKS[0].start ? "Week 1 starts on Monday 5 October" : "All 12 weeks are behind you";
+}
+function renderAll() {
+  document.getElementById("boxOn").checked = state.box;
+  document.getElementById("price").value = state.price;
+  document.getElementById("goal").value = state.goal;
+  document.getElementById("bundle").value = state.bundle;
+  document.getElementById("goNum").value = state.go.num;
+  document.getElementById("goHave").value = state.go.have;
+  document.getElementById("fcStart").value = state.fc.start;
+  document.getElementById("fcGrow").value = state.fc.grow;
+  document.getElementById("fcSpend").value = state.fc.spend;
+  renderCosts(); renderMoney(); renderShop(); renderPlans(); renderShots(); renderGo(); renderLog(); renderWeeks();
+}
+
+document.getElementById("boxOn").addEventListener("change", e => { state.box = e.target.checked; save(); renderCosts(); renderMoney(); });
+document.getElementById("price").addEventListener("input", e => { state.price = Number(e.target.value); save(); renderMoney(); });
+document.getElementById("goal").addEventListener("input", e => { state.goal = Number(e.target.value) || 0; save(); renderMoney(); });
+[["goNum", "go", "num"], ["goHave", "go", "have"], ["fcStart", "fc", "start"], ["fcGrow", "fc", "grow"], ["fcSpend", "fc", "spend"]].forEach(([id, grp, key]) =>
+  document.getElementById(id).addEventListener("input", e => { state[grp] = { ...state[grp], [key]: Number(e.target.value) || 0 }; save(); grp === "go" ? renderGo() : renderForecast(); }));
+document.getElementById("fcPrice").addEventListener("change", e => { const v = Number(e.target.value) || 0; if (!v) return; state.price = v; document.getElementById("price").value = v; save(); renderMoney(); });
+try { document.getElementById("lgDate").value = new Date().toLocaleDateString("en-CA"); } catch (e) {}
+document.getElementById("lgAdd").addEventListener("click", () => {
+  const v = id => document.getElementById(id).value;
+  if (!v("lgCans") && !v("lgNote")) { document.getElementById("lgCans").focus(); return; }
+  state.log = [...state.log, { d: v("lgDate"), c: Number(v("lgCans")) || 0, r: Number(v("lgRev")) || 0, s: v("lgStock") === "" ? null : Number(v("lgStock")), n: v("lgNote").trim() }];
+  ["lgCans", "lgRev", "lgStock", "lgNote"].forEach(id => document.getElementById(id).value = "");
+  save(); renderLog();
+});
+document.getElementById("bundle").addEventListener("input", e => { state.bundle = Number(e.target.value) || 0; save(); renderMoney(); });
+
+// highlight current section in the bar
+const links = [...document.querySelectorAll("#secnav a")];
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
+}), { rootMargin: "-45% 0px -50% 0px" });
+document.querySelectorAll("section.block").forEach(s => io.observe(s));
+
+loadLocal();
+renderAll();
+
+(async () => {
+  if (!window.claude?.use) return;
+  try {
+    const [db, user] = await Promise.all([claude.use("db"), claude.use("user")]);
+    if (!db || !user) return;
+    const id = await user.id();
+    if (!id) return;
+    store = db.collection("data/users/" + id).doc("amora-perfume-plan");
+    const snap = await store.get();
+    if (snap.exists) {
+      const r = snap.data();
+      state = { ...state, ...r, costs: r.costs || {}, done: r.done || {}, go: r.go || state.go, fc: r.fc || state.fc, log: r.log || [] };
+      delete state.updated;
+      try { localStorage.setItem("amora-perfume-plan", JSON.stringify(state)); } catch (e) {}
+      renderAll();
+    } else if (Object.keys(state.done).length || Object.keys(state.costs).length) {
+      await store.set({ ...state, updated: Date.now() });
+    }
+    setSync("Progress saved to your account");
+  } catch (e) { store = null; }
+})();
+</script>
+
+</body></html>
